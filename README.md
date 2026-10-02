@@ -1,35 +1,73 @@
-# Machine Learning Midterm Project
+# ITAI-1371 Midterm Project – Patient Health Records Data Preprocessing
 
-## Dataset
+## Group 1
+- Viktoriya Kurmisheva
+- Tien Manh Nguyen
+- Zaid Alayedy
 
-This repository contains the raw dataset selected for the Machine Learning Midterm Project.
+## Project Overview
+For this midterm project, our group worked with the Patient Health Records dataset from Kaggle. The goal was to clean and preprocess the raw data so it can later be used for machine learning classification.
 
-**Dataset file:** `Patient_Health_Records_Raw.csv`
+The original dataset contains 10,000 records and 17 columns with numerical, categorical, health, lifestyle, medication, and visit information. The target variable is `Has_Disease`, which can be used for a binary classification problem.
 
-The dataset contains patient health information that can be used for Exploratory Data Analysis (EDA), data preprocessing, feature engineering, and later machine learning model development.
+## Main Preprocessing Steps
+All preprocessing was completed with Python in Jupyter Notebook. The original dataset was not edited manually.
 
-## Project Goal
+The project includes:
 
-The goal of this project is to clean and preprocess the dataset using Python in a Jupyter Notebook and prepare it for machine learning.
+- 70% training and 30% testing split
+- EDA performed only on the training data
+- Missing-value handling
+- Numerical data cleaning
+- Age and Blood Pressure corrections
+- Categorical data standardization
+- One-Hot Encoding
+- City frequency encoding
+- Class balancing with random oversampling
+- Feature engineering
+- Log normalization for selected skewed features
+- Min-Max Scaling
+- Matplotlib before-and-after visualizations
+- Printed sample data throughout preprocessing
+- Final verification of missing, non-numerical, and infinite values
 
-Possible preprocessing steps will include:
+## Feature Engineering
+The following new features were created:
 
-* Handling missing or null values
-* Removing unnecessary features
-* Encoding categorical variables
-* One-hot encoding
-* Scaling and normalization
-* Feature engineering
-* Checking and handling class imbalance
-* Visualizing data distributions before and after preprocessing
-* Splitting the data into 70% training data and 30% testing data
+- `Pulse_Pressure`
+- `Mean_Arterial_Pressure`
+- `Cholesterol_Age_Ratio`
 
-EDA and preprocessing will be performed only on the training dataset, while the testing dataset will remain untouched.
+## Final Dataset
+After preprocessing, the final training dataset contains:
+
+- 3,518 records
+- 31 columns
+- No missing feature values
+- No non-numerical predictors
+- No infinite values
+- Balanced `Has_Disease` classes with 1,759 records in each class
+
+The cleaned dataset is ready for future machine learning model training.
+
+## Repository Contents
+This repository includes:
+
+- Original dataset document
+- Patient Health Records Dataset Proposal
+- What We Will Accomplish document
+- Main preprocessing Jupyter Notebook
+- Before and After Data Processing Jupyter Notebook
+- Midterm Reflection
+- Team Member Contribution Journal
+- Final cleaned training dataset
+
+## Team Contributions
+**Viktoriya Kurmisheva** worked on identifier removal, Age and Blood Pressure corrections, categorical cleaning, One-Hot Encoding, and class balancing.
+
+**Tien Manh Nguyen** worked on the 70/30 train-test split, EDA, numerical preparation, date features, and City frequency encoding.
+
+**Zaid Alayedy** worked on feature engineering, normalization, scaling, and final numerical checks.
 
 ## Machine Learning Goal
-
-The cleaned dataset may later be used to build machine learning models that predict whether a patient has a disease based on available health-related features.
-
-## Current Status
-
-The original raw dataset is uploaded for instructor approval. No manual changes have been made to the dataset.
+The processed dataset will be used later to train and compare machine learning models that predict the `Has_Disease` target.
